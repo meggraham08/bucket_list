@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import UserList from './UserList';
-import UserForm from './UserForm';
+import AdventureForm from './AdventureForm';
+import AdventureList from './AdventureList';
 import { Button } from 'react-bootstrap';
 
-const Users = () => {
+const Adventures = () => {
   const [adding, setAdd] = useState(false)
 
   return (
@@ -11,7 +11,7 @@ const Users = () => {
       {
         adding ?
           <>
-            <UserForm 
+            <AdventureForm 
               setAdd={setAdd} 
             />
             <Button onClick={() => setAdd(false)}>Cancel</Button>
@@ -19,10 +19,10 @@ const Users = () => {
         :
         <Button onClick={() => setAdd(true)}>+</Button>
       }
-      <h1>All Users</h1>
-      <UserList />
+      <h1>All Adventures</h1>
+      <AdventureList />
     </>
   )
 }
 
-export default Users;
+export default Adventures;
