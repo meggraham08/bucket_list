@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
-import { adventureConsumer } from '../../providers/adventureProvider';
+import { AdventureConsumer } from '../../providers/AdventureProvider';
 
 const AdventureForm = ({ addAdventure, setAdd, id, title, desc, updateAdventure, setEdit }) => {
   const [adventure, setAdventure] = useState({ title: '', desc: '' })
@@ -16,10 +16,10 @@ const AdventureForm = ({ addAdventure, setAdd, id, title, desc, updateAdventure,
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateadventure(id, adventure)
+      updateAdventure(id, adventure)
       setEdit(false)
     } else {
-      addadventure(adventure)
+      addAdventure(adventure)
       setAdd(false)
     }
     setAdventure({ title: '', desc: '' })
@@ -29,7 +29,7 @@ const AdventureForm = ({ addAdventure, setAdd, id, title, desc, updateAdventure,
     <>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <h1>{ id ? 'Edit' : 'Create' } adventure</h1>
+          <h1>{ id ? 'Edit' : 'Create' } Adventure</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
               <Form.Label>First Name</Form.Label>
